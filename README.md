@@ -1,5 +1,7 @@
 # Browser VM
 
+(Custom version that can be compiled by opening with [Gitpod](https://gitpod.io))
+
 A custom [Buildroot](https://buildroot.org/) config for a Linux x86 VM, meant to
 be run in the browser as part of [browser-shell](https://github.com/humphd/browser-shell).
 The resulting Linux ISO is meant to be run under
