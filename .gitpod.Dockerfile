@@ -3,7 +3,7 @@ FROM gitpod/workspace-full
 RUN echo 'Installing dependencies...'
 RUN sudo apt update && sudo apt install -y cpio rsync
 RUN echo 'Downloading buildroot...'
-RUN https://buildroot.org/downloads/buildroot-2021.02.1.tar.gz
+RUN wget https://buildroot.org/downloads/buildroot-2021.02.1.tar.gz
 RUN echo 'Extracting buildroot tarfile...'
 RUN tar -xvf buildroot-2021.02.1.tar.gz
 RUN echo 'Starting build process...'
