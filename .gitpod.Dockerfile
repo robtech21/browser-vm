@@ -1,8 +1,13 @@
 FROM gitpod/workspace-full
 # Buildroot stuff
-RUN sudo apt install -y cpio rsync
-RUN git clone https://github.com/buildroot/buildroot
-RUN cd buildroot
+RUN echo 'Installing dependencies...'
+RUN sudo apt update && sudo apt install -y cpio rsync
+RUN echo 'Downloading buildroot...'
+RUN https://buildroot.org/downloads/buildroot-2021.02.1.tar.gz
+RUN echo 'Extracting buildroot tarfile...'
+RUN tar -xvf buildroot-2021.02.1.tar.gz
+RUN echo 'Starting build process...'
+RUN cd buildroot-2021.02.1
 RUN make BR2_EXTERNAL=../buildroot-v86 v86_defconfig
 RUN make menuconfig
 RUN make savedefconfig
