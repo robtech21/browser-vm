@@ -6,7 +6,7 @@ RUN sudo apt update && sudo apt install -y cpio rsync
 RUN echo 'Downloading buildroot...'
 RUN wget https://buildroot.org/downloads/buildroot-2021.02.1.tar.gz
 RUN echo 'Extracting buildroot tarfile...'
-pwd && ls
+RUN pwd && ls
 RUN tar -xvf buildroot-2021.02.1.tar.gz
 RUN echo 'Starting build process...'
 WORKDIR ./buildroot-2021.02.1/
