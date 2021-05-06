@@ -8,11 +8,11 @@ RUN sudo wget https://buildroot.org/downloads/buildroot-2021.02.1.tar.gz
 RUN echo 'Extracting buildroot tarfile...'
 RUN pwd && ls
 RUN sudo tar -xvf buildroot-2021.02.1.tar.gz
-#RUN echo 'Starting build process...'
-#WORKDIR workspace/browser-vm/buildroot-2021.02.1/
-#RUN pwd && ls
-#RUN sudo make BR2_EXTERNAL=/workspace/browser-vm/buildroot-v86 v86_defconfig
-#RUN sudo make menuconfig
-#RUN sudo make savedefconfig
-#RUN sudo make linux-menuconfig
-#RUN sudo make linux-savedefconfig
+RUN echo 'Starting build process...'
+WORKDIR workspace/browser-vm/buildroot-2021.02.1/
+RUN pwd && ls
+RUN sudo make BR2_EXTERNAL=/workspace/browser-vm/buildroot-v86 v86_defconfig
+RUN sudo make menuconfig
+RUN sudo make savedefconfig
+RUN sudo make linux-menuconfig
+RUN sudo make linux-savedefconfig
