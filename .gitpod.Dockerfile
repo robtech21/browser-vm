@@ -8,6 +8,7 @@ RUN echo 'Extracting buildroot tarfile...'
 RUN tar -xvf buildroot-2021.02.1.tar.gz
 RUN echo 'Starting build process...'
 WORKDIR ./buildroot/
+RUN pwd && ls -sh
 RUN make BR2_EXTERNAL=../buildroot-v86 v86_defconfig
 RUN make menuconfig
 RUN make savedefconfig
